@@ -1,0 +1,25 @@
+﻿@using AirportMVC5.Models;
+@model IEnumerable<FlightViewModel>
+@{
+    ViewBag.Title = "ViewFlights";
+}
+
+
+@(Html
+        .Grid(Model)
+        .Build(columns =>
+        {
+            columns.Add(_ => _.Id).Titled("Id");
+            columns.Add(_ => _.DeparturePoint).Titled("Departure");
+            columns.Add(_ => _.ArrivalPoint).Titled("Arrival");
+            columns.Add(_ => _.DepartureTime).Titled("DepartureTime");            
+            columns.Add(_ => _.ArrivalTime).Titled("ArrivalTime");
+            columns.Add(_ => "<button data-id=\"" + _.Id + "\">Edit</button>").Encoded(false);
+            columns.Add(_ => "<button data-id=\"" + _.Id + "\">Remove</button>").Encoded(false);
+        })
+        .Empty("No data found")
+        .Filterable()
+        .Sortable()
+        .Pageable()
+)
+

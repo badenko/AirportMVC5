@@ -1,0 +1,30 @@
+﻿@using AirportMVC5.Models;
+@model IEnumerable<TripViewModel>
+@{
+    ViewBag.Title = "ViewFlights";
+}
+
+
+@(Html
+            .Grid(Model)
+            .Build(columns =>
+            {
+            columns.Add(_ => _.Id).Titled("Id");
+            columns.Add(_ => _.Departure).Titled("Departure");
+            columns.Add(_ => _.DepartureTerminal).Titled("Terminal");
+            columns.Add(_ => _.Arrival).Titled("Arrival");
+            columns.Add(_ => _.ArrivalTerminal).Titled("Terminal");
+            columns.Add(_ => _.DepartureDay).Titled("Date");
+            columns.Add(_ => _.DepartureTime).Titled("Time");
+            columns.Add(_ => _.ArrivalDay).Titled("Date");
+            columns.Add(_ => _.ArrivalTime).Titled("Time");
+            columns.Add(_ => _.FlightStatus).Titled("FlightStatus");
+            columns.Add(_ => "<button data-id=\"" + _.Id + "\">Cancel</button>").Encoded(false);
+    })
+            .Empty("No data found")
+            .Filterable()
+            .Sortable()
+            .Pageable()
+)
+
+

@@ -1,0 +1,25 @@
+﻿
+@{
+    ViewBag.Title = "NewFlight";
+}
+
+<h2>NewFlight</h2>
+
+@using (Html.BeginForm("NewFlight", "Home"))
+{
+    @Html.Label("Departure Point")
+    @Html.TextBox("DeparturePoint")
+    <br />
+
+    @Html.Label("Arrival Point")
+    @Html.TextBox("ArrivalPoint")
+    <br />
+
+    @Html.Label("Departure Time")
+    @Html.TextBox("DepartureTime")
+    <br />    
+    @Html.Label("ArrivalTime")
+    @Html.TextBox("ArrivalTime")
+    <br />
+    <input type="submit" value="Submit" />
+}

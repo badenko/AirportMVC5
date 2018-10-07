@@ -1,0 +1,31 @@
+﻿@using AirportMVC5.Models;
+@model FlightViewModel
+
+@{
+    ViewBag.Title = "Change Flight";
+}
+<h2>Change Flight</h2>
+<h3>Flight ID : @Model.Id</h3>
+
+@using (Html.BeginForm("UpdateBook", "Book"))
+{
+    @Html.HiddenFor(_ => _.Id);
+    @Html.LabelFor(_ => _.DeparturePoint);
+    @Html.TextBoxFor(_ => _.DeparturePoint);
+    <br />
+    @Html.Label("Departure");
+    @Html.TextBoxFor(_ => _.DeparturePoint);
+    <br />
+    @Html.Label("Departure time");
+    @Html.TextBoxFor(_ => _.DepartureTime);
+    <br />
+    @Html.Label("Arrival");
+    @Html.TextBoxFor(_ => _.ArrivalPoint);
+    <br />
+    @Html.Label("Arrival Time");
+    @Html.TextBoxFor(_ => _.ArrivalTime);
+    <br />
+    <input type="submit" , value=" update" />
+
+}
+
