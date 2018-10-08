@@ -9,6 +9,9 @@ namespace AirportMVC5.Data
 {
     public class AppDbContext: DbContext
     {
+        public AppDbContext()
+            :base("AirportMVC")
+        { }
         public DbSet<Flight> Flights { get; set; }
         public DbSet<Trip> Trips { get; set; }
     }
